@@ -300,7 +300,34 @@ header {
 
 .btn-call.no-num { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
 
-/* ── SECTION DIVIDER ── */
+/* ── WATERMARK ── */
+.watermark {
+  position: fixed;
+  bottom: calc(20px + var(--safe-bottom));
+  right: 20px;
+  z-index: 999;
+  background: rgba(46, 16, 101, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+  border: 1px solid rgba(167,139,250,0.3);
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+.watermark-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--purple-mid);
+  flex-shrink: 0;
+}
 .section-divider {
   margin: 48px 0 32px;
   display: flex; align-items: center; gap: 16px;
@@ -422,7 +449,6 @@ footer strong { color: white; font-weight: 500; }
         <select class="filter-select" id="serviceFilter" onchange="filterClinics()">
           <option value="">All Services</option>
           <option value="cleaning">Cleaning</option>
-          <option value="braces">Braces</option>
           <option value="whitening">Whitening</option>
           <option value="extraction">Extraction</option>
           <option value="dentures">Dentures</option>
@@ -486,7 +512,14 @@ footer strong { color: white; font-weight: 500; }
 <footer>
   <strong>Legazpi Dental Directory</strong> &nbsp;·&nbsp; Legazpi City, Albay, Philippines<br>
   <span style="font-size:12px;">Confirm hours and availability directly with the clinic before visiting.</span>
+  <div style="margin-top:14px;font-size:11px;opacity:0.4;">Built with ♥ · © 2025 Legazpi Dental Directory</div>
 </footer>
+
+<!-- ★ WATERMARK — edit the text below to customize ★ -->
+<div class="watermark">
+  <div class="watermark-dot"></div>
+  Legazpi Dental Directory
+</div>
 
 <script>
 const CLINICS = [
